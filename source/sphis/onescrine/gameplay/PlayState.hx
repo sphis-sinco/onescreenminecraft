@@ -1,5 +1,6 @@
 package sphis.onescrine.gameplay;
 
+import flixel.FlxG;
 import flixel.FlxState;
 import flixel.math.FlxPoint;
 import sphis.onescrine.gameplay.blocks.base.Block;
@@ -14,8 +15,8 @@ class PlayState extends FlxState
 		var taigo:ScaledUIBox = new ScaledUIBox({
 			position: FlxPoint.get(),
 
-			width_scale_addition: 32,
-			height_scale_addition: 8
+			width_scale_addition: FlxG.random.int(0, 32),
+			height_scale_addition: FlxG.random.int(0, 32),
 		});
 		taigo.screenCenter();
 		add(taigo);
