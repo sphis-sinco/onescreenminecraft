@@ -1,50 +1,40 @@
 package sphis.onescrine.gameplay;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxPoint;
+import sphis.onescrine.gameplay.blocks.TempBlock;
 import sphis.onescrine.gameplay.blocks.base.Block;
 import sphis.onescrine.ui.ScaledUIBox;
 
 class PlayState extends FlxState
 {
+	public var blocks:FlxSpriteGroup = new FlxSpriteGroup();
+
 	override function create()
 	{
-		add(new Block('temp-block'));
+		add(blocks);
 
-		var taigo:ScaledUIBox = new ScaledUIBox({
-			position: FlxPoint.get(),
+		var w = 0;
+		var h = 0;
 
-			width_scale_addition: 6,
-			height_scale_addition: 18,
+		while (h < 12)
+		{
+			while (w < 20)
+			{
+				var newBlock = new TempBlock();
+				newBlock.x = w * (newBlock.width);
+				newBlock.y = h * (newBlock.height);
+				blocks.add(newBlock);
 
-			/*
-				general_scale_addition: null,
-				graphic: {
-					image_path: null,
-					corner_radius: null,
-				}
-			 */
-		});
-		taigo.screenCenter();
-		add(taigo);
-		var new_york:ScaledUIBox = new ScaledUIBox({
-			position: FlxPoint.get(),
+				w++;
+			}
 
-			width_scale_addition: 6,
-			height_scale_addition: 18,
-
-			/*
-				general_scale_addition: null,
-				graphic: {
-					image_path: null,
-					corner_radius: null,
-				}
-			 */
-		});
-		new_york.screenCenter();
-		new_york.x += new_york.width + 16;
-		add(new_york);
+			h++;
+			w = 0;
+		}
 
 		super.create();
 	}

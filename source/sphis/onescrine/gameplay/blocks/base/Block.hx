@@ -17,9 +17,8 @@ class Block extends FlxSprite
 	public var block_id:String;
 	public var components:Array<Component> = [];
 
-	public function new(block_id:String, X:Float = 0, Y:Float = 0)
+	public function new(block_id:String, X:Null<Float> = 0, Y:Null<Float> = 0)
 	{
-		super(x, y);
 		this.block_id = block_id;
 
 		config = cast Json.parse(Assets.getText('assets/data/blocks/' + block_id + '.json')) ?? null;
@@ -27,13 +26,17 @@ class Block extends FlxSprite
 			config = {
 				gameplay_asset: {
 					path: 'blocks/temp-block',
-					animated: true
+					animated: true,
+					width: Constants.BLOCK_DEFAULT_WIDTH,
+					height: Constants.BLOCK_DEFAULT_HEIGHT,
 				},
 				inventory_name: 'Null Block: ' + block_id,
 			}
 		else
-			trace('Created Block with block_id=' + this.block_id + ' and config=' + Std.string(config).convert_dynamic_data_to_minecraft());
+			trace('Created Block with block_id=' + this.block_id + (({x: X, y: Y}
+				!= {x: null, y: null} && {x: X, y: Y} != {x: 0, y: 0}) ? ' and position={x=' + X + ', y=' + Y + '}' : ''));
 
+		super(X, Y);
 		loadAsset(config.gameplay_asset);
 	}
 
@@ -41,7 +44,8 @@ class Block extends FlxSprite
 	{
 		this.animation.onFinish.removeAll();
 
-		loadGraphic('assets/images/' + asset.path + '.png', asset.animated, asset.width ?? 16, asset.height ?? 16);
+		loadGraphic('assets/images/' + asset.path + '.png', asset.animated, asset.width ?? Constants.BLOCK_DEFAULT_WIDTH,
+			asset.height ?? Constants.BLOCK_DEFAULT_HEIGHT);
 
 		if (asset.animated)
 		{
