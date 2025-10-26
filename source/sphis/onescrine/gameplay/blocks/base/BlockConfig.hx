@@ -8,13 +8,14 @@ typedef BlockConfig =
 
 	var ?inventory_asset:BlockAsset;
 	var ?inventory_name:String;
-	
-    var ?components:Array<Component>;
+
+	var ?components:Array<Component>;
 }
 
 typedef BlockAsset =
 {
 	var path:String;
+
 	var ?animated:Bool;
 	var ?width:Null<Int>;
 	var ?height:Null<Int>;
@@ -26,7 +27,10 @@ typedef BlockAssetAnimation =
 {
 	var type:String;
 	var name:String;
+	var ?condition:String;
+
 	var ?frames:Array<Int>;
+
 	var ?fps:Null<Int>;
 	var ?looped:Bool;
 	var ?flipped_x:Bool;

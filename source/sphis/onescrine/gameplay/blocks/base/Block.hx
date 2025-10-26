@@ -9,6 +9,8 @@ import sphis.onescrine.gameplay.components.Component;
 class Block extends FlxSprite
 {
 	public var config:BlockConfig;
+	public var animation_conditions:Map<String, String> = [];
+
 	public var block_id:String;
 	public var components:Array<Component> = [];
 
@@ -26,6 +28,7 @@ class Block extends FlxSprite
 				},
 				inventory_name: 'Null Block: ' + block_id,
 			}
+
 		loadAsset(config.gameplay_asset);
 	}
 
@@ -44,8 +47,9 @@ class Block extends FlxSprite
 				for (animation in asset.animations)
 				{
 					final type = animation.type;
-
 					final name = animation.name;
+					final condition = animation.condition;
+
 					final fps = animation.fps;
 					final looped = animation.looped;
 					final flipped_x = animation.flipped_x;
@@ -54,7 +58,9 @@ class Block extends FlxSprite
 					if (type == 'frames')
 						this.animation.add(name, animation.frames, fps, looped, flipped_x, flipped_y);
 
-					if (this.animation.getNameList().contains(name))
+					animation_conditions.set(name, condition ?? '');
+
+					if (this.animation.getNameList().contains(name) && condition == 'default')
 						this.animation.play(name);
 				}
 			}
