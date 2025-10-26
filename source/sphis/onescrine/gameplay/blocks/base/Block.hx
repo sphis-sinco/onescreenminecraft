@@ -81,9 +81,6 @@ class Block extends FlxSprite
 								current_animation.conditions = current_animation.conditions ?? ref_animation.conditions ?? null;
 						}
 
-					trace(name);
-					trace(current_animation);
-
 					final type = current_animation.type;
 					final conditions = current_animation.conditions;
 
