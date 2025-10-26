@@ -21,7 +21,8 @@ class Block extends FlxSprite
 		if (config == null)
 			config = {
 				gameplay_asset: {
-					path: 'blocks/temp-block'
+					path: 'blocks/temp-block',
+					animated: true
 				},
 				inventory_name: 'Null Block: ' + block_id,
 			}
