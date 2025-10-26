@@ -1,4 +1,4 @@
-package sphis.onescrine.gameplay.blocks;
+package sphis.onescrine.gameplay;
 
 class Block
 {
