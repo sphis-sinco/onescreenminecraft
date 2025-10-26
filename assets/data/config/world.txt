@@ -1,13 +1,13 @@
-layers=4
+world_layers=4
 
-layer_1_block=temp-block
-layer_1_y=0
+world_layer_1_block=temp-block
+world_layer_1_y=0
 
-layer_2_block=temp-block
-layer_2_y=3
+world_layer_2_block=temp-block
+world_layer_2_y=3
 
-layer_3_block=temp-block
-layer_3_y=6
+world_layer_3_block=temp-block
+world_layer_3_y=6
 
-layer_4_block=temp-block
-layer_4_y=9
+world_layer_4_block=temp-block
+world_layer_4_y=9
