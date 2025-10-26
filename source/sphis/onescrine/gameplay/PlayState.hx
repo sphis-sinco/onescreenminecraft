@@ -8,12 +8,14 @@ import sphis.onescrine.gameplay.blocks.Block;
 
 class PlayState extends FlxState
 {
+	public var backdrop:FlxSpriteGroup = new FlxSpriteGroup();
 	public var blocks:FlxSpriteGroup = new FlxSpriteGroup();
 
 	public var bso:FlxSprite = new FlxSprite();
 
 	override function create()
 	{
+		add(backdrop);
 		add(blocks);
 
 		bso.loadGraphic('assets/images/gui/block-select-outline.png');
@@ -23,6 +25,24 @@ class PlayState extends FlxState
 
 		var x = 0;
 		var y = 0;
+
+		while (y < 12)
+		{
+			while (x < 20)
+			{
+				var newBlock:Block = new Block(World.BACKDROP_BLOCK);
+				newBlock.x = x * (newBlock.width);
+				newBlock.y = y * (newBlock.height);
+				backdrop.add(newBlock);
+
+				x++;
+			}
+
+			y++;
+			x = 0;
+		}
+
+		y = 0;
 
 		var layer = 0;
 		var layerBlocks:Array<String> = [];
@@ -105,6 +125,7 @@ class PlayState extends FlxState
 		super.update(elapsed);
 
 		bso.visible = false;
+		bso.color = 0xFFFFFF;
 		for (block in blocks)
 		{
 			if (FlxG.mouse.overlaps(block))
@@ -113,5 +134,16 @@ class PlayState extends FlxState
 				bso.visible = true;
 			}
 		}
+
+		if (!bso.visible)
+			for (block in backdrop)
+			{
+				if (FlxG.mouse.overlaps(block))
+				{
+					bso.setPosition(block.x, block.y);
+					bso.visible = true;
+					bso.color = 0xA0A0A0;
+				}
+			}
 	}
 }

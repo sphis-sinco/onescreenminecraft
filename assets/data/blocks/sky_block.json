@@ -1,0 +1,10 @@
+{
+  "gameplay_asset": {
+    "path": "blocks/sky_block",
+    "animated": false,
+    "width": 16,
+    "height": 16
+  },
+
+  "inventory_name": "Sky Block"
+}

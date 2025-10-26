@@ -1,3 +1,5 @@
+world_backdrop_block=sky_block
+
 world_layers=3
 
 world_layer_1_block=grass_block
