@@ -7,7 +7,7 @@ class World
 	public static var LAYERS(get, never):Int;
 
 	static function get_LAYERS():Int
-		return Std.int(Textvar.getVariable('world_layers') ?? 4);
+		return Std.int(Textvar.getVariable('world_layers') ?? 1);
 
 	public static function getLayerBlock(layer:Int):String
 		return Textvar.getVariable('world_layer_' + Std.string(layer) + '_block') ?? 'temp-block';

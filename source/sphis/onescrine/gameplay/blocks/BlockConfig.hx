@@ -1,4 +1,4 @@
-package sphis.onescrine.gameplay.blocks.base;
+package sphis.onescrine.gameplay.blocks;
 
 import sphis.onescrine.gameplay.components.Component;
 
