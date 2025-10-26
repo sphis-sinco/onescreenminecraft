@@ -10,7 +10,7 @@ class World
 		return Std.int(Textvar.getVariable('world_layers') ?? 1);
 
 	public static function getLayerBlock(layer:Int):String
-		return Textvar.getVariable('world_layer_' + Std.string(layer) + '_block') ?? 'temp-block';
+		return Textvar.getVariable('world_layer_' + Std.string(layer) + '_block') ?? null;
 
 	public static function getLayerHeight(layer:Int):Int
 		return Textvar.getVariable('world_layer_' + Std.string(layer) + '_y') ?? 0;

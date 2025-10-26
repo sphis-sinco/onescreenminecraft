@@ -1,11 +1,11 @@
 world_layers=3
 
 world_layer_1_block=grass_block
-world_layer_1_y=8
+world_layer_1_y=6
 
 world_layer_2_block=dirt
-world_layer_2_y=9
+world_layer_2_y=7
 
 world_layer_3_block=stone
-world_layer_3_y=11
+world_layer_3_y=10
 world_layer_3_y_random_max_amount=2
