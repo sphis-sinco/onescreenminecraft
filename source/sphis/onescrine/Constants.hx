@@ -31,4 +31,11 @@ class Constants
 	{
 		return TEXTVAR_CLASS.getVariable('ui_scale_multiplier') ?? 4;
 	}
+
+	public static var BLOCK_SCALE_MULTIPLIER(get, never):Int;
+
+	static function get_BLOCK_SCALE_MULTIPLIER():Int
+	{
+		return TEXTVAR_CLASS.getVariable('block_scale_multiplier') ?? 4;
+	}
 }

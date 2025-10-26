@@ -115,6 +115,9 @@ class Block extends FlxSprite
 				}
 			});
 		}
+
+		this.scale.set(Constants.BLOCK_SCALE_MULTIPLIER, Constants.BLOCK_SCALE_MULTIPLIER);
+		this.updateHitbox();
 	}
 
 	public function getAnimationCondition(name:String):Array<String>
