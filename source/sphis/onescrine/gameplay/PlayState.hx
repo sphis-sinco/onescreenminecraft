@@ -11,7 +11,12 @@ class PlayState extends FlxState
 	{
 		add(new Block('temp-block'));
 
-		var taigo:ScaledUIBox = new ScaledUIBox(FlxPoint.get(), 1, 16, 4);
+		var taigo:ScaledUIBox = new ScaledUIBox({
+			position: FlxPoint.get(),
+
+			width_scale_addition: 16,
+			height_scale_addition: 4
+		});
 		taigo.screenCenter();
 		add(taigo);
 
