@@ -16,7 +16,7 @@ class PlayState extends FlxState
 		var ui_base_slice = new FlxRect(0, 0, 16, 16);
 
 		var taigo:FlxScaledSliceSprite = new FlxScaledSliceSprite(ui_base_graphic, ui_base_slice, Constants.UI_SCALE_MULTIPLIER,
-			ui_base_slice.width * Constants.UI_SCALE_MULTIPLIER, ui_base_slice.height * Constants.UI_SCALE_MULTIPLIER);
+			ui_base_slice.width * (Constants.UI_SCALE_MULTIPLIER * 2), ui_base_slice.height * Constants.UI_SCALE_MULTIPLIER);
 		taigo.screenCenter();
 		add(taigo);
 
