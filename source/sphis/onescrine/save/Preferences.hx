@@ -8,6 +8,6 @@ class Preferences
 
 	static function get_UI_DARK():Bool
 	{
-		return (Textvar.getVariable('ui_dark') == 'true') ?? false;
+		return (Std.string(Textvar.getVariable('ui_dark')).toLowerCase() == 'true') ?? false;
 	}
 }
