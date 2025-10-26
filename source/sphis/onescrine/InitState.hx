@@ -10,6 +10,7 @@ class InitState extends FlxState
 	{
 		Textvar.file_names.push('config/version');
 		Textvar.file_names.push('config/ui');
+		Textvar.file_names.push('config/save');
 		Textvar.parseAllFiles(true);
 
 		trace(Constants.TITLE);
