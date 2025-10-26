@@ -12,6 +12,9 @@ class InitState extends FlxState
 		Textvar.file_names.push('config/ui');
 		Textvar.parseAllFiles(true);
 
+		trace(Constants.TITLE);
+		trace('v' + Constants.VERSION);
+
 		FlxG.switchState(() -> new sphis.onescrine.gameplay.PlayState());
 
 		super.create();
