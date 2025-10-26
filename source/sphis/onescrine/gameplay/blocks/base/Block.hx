@@ -53,6 +53,9 @@ class Block extends FlxSprite
 
 					if (type == 'frames')
 						this.animation.add(name, animation.frames, fps, looped, flipped_x, flipped_y);
+
+					if (this.animation.getNameList().contains(name))
+						this.animation.play(name);
 				}
 			}
 		}
