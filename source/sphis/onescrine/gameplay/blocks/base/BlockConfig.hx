@@ -18,6 +18,7 @@ typedef BlockAsset =
 	var ?animated:Bool;
 	var ?width:Null<Int>;
 	var ?height:Null<Int>;
+	var ?frame:Null<Int>;
 	var ?animations:Array<BlockAssetAnimation>;
 }
 
@@ -28,4 +29,6 @@ typedef BlockAssetAnimation =
 	var ?frames:Array<Int>;
 	var ?fps:Null<Int>;
 	var ?looped:Bool;
+	var ?flipped_x:Bool;
+	var ?flipped_y:Bool;
 }
