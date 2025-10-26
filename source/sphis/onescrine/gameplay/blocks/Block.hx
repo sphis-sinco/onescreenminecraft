@@ -24,7 +24,12 @@ class Block extends FlxSprite
 
 		try
 		{
+			#if sys
+			config = cast Json.parse(sys.io.File.getContent('assets/data/blocks/' + block_id + '.json')) ?? null;
+			#else
+			// suffer
 			config = cast Json.parse(Assets.getText('assets/data/blocks/' + block_id + '.json')) ?? null;
+			#end
 		}
 		catch (e)
 		{
