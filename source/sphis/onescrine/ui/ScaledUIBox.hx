@@ -12,14 +12,20 @@ typedef ScaledUIBoxParameters =
 	var ?general_scale_addition:Int;
 	var ?width_scale_addition:Int;
 	var ?height_scale_addition:Int;
+
+	var ?graphic:
+		{
+			var ?image_path:String;
+			var ?corner_radius:Int;
+		};
 }
 
 class ScaledUIBox extends FlxScaledSliceSprite
 {
 	override public function new(params:ScaledUIBoxParameters)
 	{
-		var ui_base_graphic = FlxGraphic.fromAssetKey('assets/images/gui/ui-base.png');
-		var ui_base_corner_radius = 4;
+		var ui_base_graphic = FlxGraphic.fromAssetKey('assets/images/' + (params.graphic.image_path ?? 'gui/ui-base') + '.png');
+		var ui_base_corner_radius = params.graphic.corner_radius ?? 4;
 		var ui_base_slice = new FlxRect(ui_base_corner_radius, ui_base_corner_radius, Std.int(ui_base_graphic.width / 2), Std.int(ui_base_graphic.height / 2));
 
 		super(ui_base_graphic, ui_base_slice, Constants.UI_SCALE_MULTIPLIER + (params.general_scale_addition - 1),
