@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "name": "Sphis",
+      "roles": ["Programming", "Art", "Animation"]
+    },
+    {
+      "name": "Tiago",
+      "nickname": "TracedInPurple",
+      "roles": [
+        "The reason the BlockAssetAnimation typedef still has the conditions field",
+        "FlxScaledSliceSprite",
+        "FlxScaledSliceSprite Assistance"
+      ]
+    }
+  ]
+}
