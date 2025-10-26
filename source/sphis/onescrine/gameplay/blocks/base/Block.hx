@@ -7,6 +7,8 @@ import sphis.onescrine.gameplay.blocks.base.BlockConfig.BlockAsset;
 import sphis.onescrine.gameplay.blocks.base.BlockConfig.BlockAssetAnimation;
 import sphis.onescrine.gameplay.components.Component;
 
+using sphis.any.MinecraftDataTrace;
+
 class Block extends FlxSprite
 {
 	public var config:BlockConfig;
@@ -29,6 +31,8 @@ class Block extends FlxSprite
 				},
 				inventory_name: 'Null Block: ' + block_id,
 			}
+		else
+			trace('Created Block with block_id=' + this.block_id + ' and config=' + Std.string(config).convert_dynamic_data_to_minecraft());
 
 		loadAsset(config.gameplay_asset);
 	}

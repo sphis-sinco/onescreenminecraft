@@ -6,6 +6,8 @@ import flixel.math.FlxRect;
 import sphis.onescrine.save.Preferences;
 import tracedinpurple.ui.FlxScaledSliceSprite;
 
+using sphis.any.MinecraftDataTrace;
+
 typedef ScaledUIBoxParameters =
 {
 	var position:FlxPoint;
@@ -38,5 +40,7 @@ class ScaledUIBox extends FlxScaledSliceSprite
 			ui_base_slice.height * (Constants.UI_SCALE_MULTIPLIER + params.general_scale_addition + params.height_scale_addition));
 
 		this.setPosition(params.position.x, params.position.y);
+
+		trace('Created ScaledUIBox with params=' + params.convert_dynamic_data_to_minecraft());
 	}
 }

@@ -17,6 +17,14 @@ class PlayState extends FlxState
 
 			width_scale_addition: FlxG.random.int(0, 32),
 			height_scale_addition: FlxG.random.int(0, 32),
+
+			/*
+				general_scale_addition: null,
+				graphic: {
+					image_path: null,
+					corner_radius: null,
+				}
+			 */
 		});
 		taigo.screenCenter();
 		add(taigo);
