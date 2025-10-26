@@ -27,7 +27,8 @@ typedef BlockAssetAnimation =
 {
 	var type:String;
 	var name:String;
-	var ?condition:String;
+	var ?reference:String;
+	var ?conditions:Array<String>;
 
 	var ?frames:Array<Int>;
 
