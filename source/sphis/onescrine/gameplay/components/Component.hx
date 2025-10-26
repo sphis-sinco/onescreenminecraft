@@ -2,13 +2,13 @@ package sphis.onescrine.gameplay.components;
 
 class Component
 {
-	public var tag:String;
+	public var id:String;
 
 	public var data:Dynamic;
 
-	public function new(tag:String, data:Dynamic)
+	public function new(id:String, data:Dynamic)
 	{
-		this.tag = tag;
+		this.id = id;
 		this.data = data;
 	}
 }
