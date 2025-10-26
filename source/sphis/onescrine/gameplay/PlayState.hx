@@ -15,8 +15,8 @@ class PlayState extends FlxState
 		var taigo:ScaledUIBox = new ScaledUIBox({
 			position: FlxPoint.get(),
 
-			width_scale_addition: FlxG.random.int(0, 32),
-			height_scale_addition: FlxG.random.int(0, 32),
+			width_scale_addition: 6,
+			height_scale_addition: 18,
 
 			/*
 				general_scale_addition: null,
@@ -28,6 +28,23 @@ class PlayState extends FlxState
 		});
 		taigo.screenCenter();
 		add(taigo);
+		var new_york:ScaledUIBox = new ScaledUIBox({
+			position: FlxPoint.get(),
+
+			width_scale_addition: 6,
+			height_scale_addition: 18,
+
+			/*
+				general_scale_addition: null,
+				graphic: {
+					image_path: null,
+					corner_radius: null,
+				}
+			 */
+		});
+		new_york.screenCenter();
+		new_york.x += new_york.width + 16;
+		add(new_york);
 
 		super.create();
 	}
