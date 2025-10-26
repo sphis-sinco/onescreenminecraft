@@ -2,6 +2,8 @@ package sphis.onescrine.textvar;
 
 import lime.utils.Assets;
 
+using StringTools;
+
 class Textvar
 {
 	public static var file_names:Array<String> = [];
@@ -29,9 +31,13 @@ class Textvar
 
 		for (line in file)
 		{
+			if (line.startsWith('; ') || line.length < '.=.'.length)
+				continue;
+
 			var line_split = line.split('=');
 			var variable = line_split[0];
-			if (!allow_unknown_variables && !variables.exists(variable)) continue;
+			if (!allow_unknown_variables && !variables.exists(variable))
+				continue;
 			var new_value = line_split[1];
 
 			if (line_split.length > 2)
@@ -51,7 +57,7 @@ class Textvar
 			{
 				var letter = type_string.charAt(i);
 
-				if (StringTools.contains(new_value.toLowerCase(), letter) && !is_string)
+				if (new_value.toLowerCase().contains(letter) && !is_string)
 					is_string = true;
 			}
 
