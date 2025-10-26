@@ -60,10 +60,16 @@ class Block extends FlxSprite
 
 					animation_conditions.set(name, condition ?? '');
 
-					if (this.animation.getNameList().contains(name) && condition == 'default')
+					if (this.animation.getNameList().contains(name) && doesAnimationHaveCondition(name, 'default'))
 						this.animation.play(name);
 				}
 			}
 		}
 	}
+
+	public function getAnimationCondition(name:String):String
+		return this.animation_conditions.get(name);
+
+	public function doesAnimationHaveCondition(name:String, condition:String):Bool
+		return this.animation_conditions.get(name) == condition;
 }
