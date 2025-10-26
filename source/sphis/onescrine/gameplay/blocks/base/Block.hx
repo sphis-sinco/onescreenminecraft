@@ -7,6 +7,7 @@ import sphis.onescrine.gameplay.blocks.base.BlockConfig.BlockAsset;
 import sphis.onescrine.gameplay.blocks.base.BlockConfig.BlockAssetAnimation;
 import sphis.onescrine.gameplay.components.Component;
 
+using Math;
 using sphis.any.MinecraftDataTrace;
 
 class Block extends FlxSprite
@@ -33,8 +34,7 @@ class Block extends FlxSprite
 				inventory_name: 'Null Block: ' + block_id,
 			}
 		else
-			trace('Created Block with block_id=' + this.block_id + (({x: X, y: Y}
-				!= {x: null, y: null} && {x: X, y: Y} != {x: 0, y: 0}) ? ' and position={x=' + X + ', y=' + Y + '}' : ''));
+			trace('Created Block with block_id=' + this.block_id + ((X.abs() > 1.0 || Y.abs() > 0.0) ? ' and position={x=' + X + ', y=' + Y + '}' : ''));
 
 		super(X, Y);
 		loadAsset(config.gameplay_asset);
