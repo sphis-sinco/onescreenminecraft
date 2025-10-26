@@ -17,23 +17,23 @@ class PlayState extends FlxState
 	{
 		add(blocks);
 
-		var w = 0;
-		var h = 0;
+		var x = 0;
+		var y = 0;
 
-		while (h < 12)
+		while (y < 12)
 		{
-			while (w < 20)
+			while (x < 20)
 			{
 				var newBlock = new TempBlock();
-				newBlock.x = w * (newBlock.width);
-				newBlock.y = h * (newBlock.height);
+				newBlock.x = x * (newBlock.width);
+				newBlock.y = y * (newBlock.height);
 				blocks.add(newBlock);
 
-				w++;
+				x++;
 			}
 
-			h++;
-			w = 0;
+			y++;
+			x = 0;
 		}
 
 		super.create();

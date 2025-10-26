@@ -1,0 +1,13 @@
+layers=4
+
+layer_1_block=temp-block
+layer_1_y=0
+
+layer_2_block=temp-block
+layer_2_y=0
+
+layer_3_block=temp-block
+layer_3_y=0
+
+layer_4_block=temp-block
+layer_4_y=0
