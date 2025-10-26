@@ -4,7 +4,7 @@ import sphis.onescrine.gameplay.components.Component;
 
 typedef BlockConfig =
 {
-	var ?gameplay_asset:BlockAsset;
+	var gameplay_asset:BlockAsset;
 
 	var ?inventory_asset:BlockAsset;
 	var ?inventory_name:String;
@@ -16,8 +16,8 @@ typedef BlockAsset =
 {
 	var path:String;
 	var ?animated:Bool;
-	var ?width:Int;
-	var ?height:Int;
+	var ?width:Null<Int>;
+	var ?height:Null<Int>;
 	var ?animations:Array<BlockAssetAnimation>;
 }
 
@@ -26,6 +26,6 @@ typedef BlockAssetAnimation =
 	var type:String;
 	var name:String;
 	var ?frames:Array<Int>;
-	var ?fps:Int;
+	var ?fps:Null<Int>;
 	var ?looped:Bool;
 }
