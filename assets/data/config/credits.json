@@ -11,6 +11,7 @@
         "The reason the BlockAssetAnimation typedef still has the conditions field",
         "FlxScaledSliceSprite Library",
         "FlxScaledSliceSprite Assistance",
+        "Fixing random asset / lime issue with block jsons",
         "Mob mod guy"
       ]
     }
