@@ -25,23 +25,5 @@
 
   "inventory_name": "Template Block",
 
-  "components": [
-    {
-      "id": "default_animation",
-      "data": "idle"
-    },
-    {
-      "id": "after_animation",
-      "data": [
-        {
-          "current_animation": "idle",
-          "next_animation": "idle-post"
-        },
-        {
-          "current_animation": "idle-post",
-          "next_animation": "idle"
-        }
-      ]
-    }
-  ]
+  "components": []
 }
