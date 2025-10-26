@@ -9,6 +9,7 @@ class InitState extends FlxState
 	override public function create()
 	{
 		Textvar.file_names.push('config/version');
+		Textvar.file_names.push('config/ui');
 		Textvar.parseAllFiles(true);
 
 		FlxG.switchState(() -> new sphis.onescrine.gameplay.PlayState());

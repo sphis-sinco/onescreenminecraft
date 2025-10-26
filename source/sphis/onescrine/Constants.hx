@@ -18,10 +18,17 @@ class Constants
 
 	static function get_VERSION():Version
 	{
-		final version_major = Std.int(TEXTVAR_CLASS.getVariable('version_major'));
-		final version_minor = Std.int(TEXTVAR_CLASS.getVariable('version_minor'));
-		final version_patch = Std.int(TEXTVAR_CLASS.getVariable('version_patch'));
+		final version_major = Std.int(TEXTVAR_CLASS.getVariable('version_major') ?? 0);
+		final version_minor = Std.int(TEXTVAR_CLASS.getVariable('version_minor') ?? 0);
+		final version_patch = Std.int(TEXTVAR_CLASS.getVariable('version_patch') ?? 0);
 
 		return new Version(version_major, version_minor, version_patch);
+	}
+
+	public static var UI_SCALE_MULTIPLIER(get, never):Int;
+
+	static function get_UI_SCALE_MULTIPLIER():Int
+	{
+		return TEXTVAR_CLASS.getVariable('ui_scale_multiplier') ?? 4;
 	}
 }
