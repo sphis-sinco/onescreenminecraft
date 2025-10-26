@@ -1,6 +1,7 @@
 package sphis.onescrine.gameplay;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxSpriteGroup;
 import sphis.onescrine.gameplay.blocks.Block;
@@ -9,9 +10,16 @@ class PlayState extends FlxState
 {
 	public var blocks:FlxSpriteGroup = new FlxSpriteGroup();
 
+	public var bso:FlxSprite = new FlxSprite();
+
 	override function create()
 	{
 		add(blocks);
+
+		bso.loadGraphic('assets/images/gui/block-select-outline.png');
+		bso.scale.set(Constants.UI_SCALE_MULTIPLIER, Constants.BLOCK_SCALE_MULTIPLIER);
+		add(bso);
+		bso.updateHitbox();
 
 		var x = 0;
 		var y = 0;
@@ -95,5 +103,15 @@ class PlayState extends FlxState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		bso.visible = false;
+		for (block in blocks)
+		{
+			if (FlxG.mouse.overlaps(block))
+			{
+				bso.setPosition(block.x, block.y);
+				bso.visible = true;
+			}
+		}
 	}
 }
