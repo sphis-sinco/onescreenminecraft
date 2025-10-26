@@ -142,7 +142,7 @@ class PlayState extends FlxState
 				{
 					bso.setPosition(block.x, block.y);
 					bso.visible = true;
-					bso.color = 0xA0A0A0;
+					// bso.color = 0xA0A0A0;
 				}
 			}
 	}
