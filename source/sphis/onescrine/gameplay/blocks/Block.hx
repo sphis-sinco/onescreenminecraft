@@ -41,8 +41,8 @@ class Block extends FlxSprite
 				},
 				inventory_name: 'Null Block: ' + block_id,
 			}
-		else
-			trace('Created Block with block_id=' + this.block_id + ((X.abs() > 1.0 || Y.abs() > 0.0) ? ' and position={x=' + X + ', y=' + Y + '}' : ''));
+		// else
+		// 	trace('Created Block with block_id=' + this.block_id + ((X.abs() > 1.0 || Y.abs() > 0.0) ? ' and position={x=' + X + ', y=' + Y + '}' : ''));
 
 		super(X, Y);
 		loadAsset(config.gameplay_asset);
